@@ -6,5 +6,12 @@ public class First55 {
      */
     public static void main(String[] args) {
         // TODO implement
+
+        int i = 1;
+        for ( int j = 1; j < 56; j++ )
+        {
+            System.out.printf("%d ", i);
+            i += 2;
+        }
     }
 }

@@ -7,5 +7,11 @@ public class First20 {
      */
     public static void main(String[] args) {
         // TODO implement
+        int i = 2;
+        for ( int j = 1; j < 21; j++ )
+        {
+            System.out.printf("%d ", i);
+            i *= 2;
+        }
     }
 }

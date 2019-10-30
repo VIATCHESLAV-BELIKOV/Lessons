@@ -14,6 +14,7 @@ public class IsEven2 {
     public static String isEven(int n) {
         // TODO implement
         // Допустимые строки: "Четное" или "Нечетное"
+        if ( (n != 0) && ((n & 1) == 1) ) return "Нечетное";
 
         return "Четное";
     }
