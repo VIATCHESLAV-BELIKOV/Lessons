@@ -15,7 +15,13 @@ public class ThreeDigitsSum {
 
     public static int sum(int n) {
         // TODO implement
-
-        return 0;
+        int j = n;
+        int k = 0;
+        while ( j != 0 )
+        {
+            k += j % 10;
+            j /= 10;
+        }
+        return k;
     }
 }
