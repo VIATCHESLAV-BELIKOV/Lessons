@@ -20,6 +20,8 @@ public class Factorial {
     public static long factorial(int n) {
         // TODO implement
 
-        return 0;
+        int i = 1;
+        for ( int k=1; k<=n; k++) i *= k;
+        return i;
     }
 }

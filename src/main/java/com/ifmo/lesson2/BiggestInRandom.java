@@ -1,5 +1,7 @@
 package com.ifmo.lesson2;
 
+import java.util.Random;
+
 public class BiggestInRandom {
     /*
      Создать программу, выводящую на экран случайно сгенерированное трёхзначное
@@ -18,8 +20,8 @@ public class BiggestInRandom {
 
     public static int threeDigitRandom() {
         // TODO implement
-
-        return 0;
+        Random r = new Random();
+        return r.nextInt(899) + 100;
     }
 
     public static String largestDigit(int rnd) {
@@ -27,6 +29,14 @@ public class BiggestInRandom {
 
         int max = 0;
 
+        int j = rnd;
+        int k = 0;
+        while ( j != 0 )
+        {
+            k = j % 10;
+            if ( k > max ) max = k;
+            j /= 10;
+        }
         return "В числе " + rnd + " наибольшая цифра " + max + ".";
     }
 }
