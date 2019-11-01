@@ -26,8 +26,13 @@ public class IntsOrdering {
 
     public static String ordering(int a, int b, int c) {
         // TODO implement
+        int x, y, z;
+        
+        x = Math.min(a,Math.min(b,c));
+        z = Math.max(a,Math.max(b,c));
+        y = a + b + c - x - z;
 
         return "Числа в переменных a, b и c: " + a + ", " + b + ", " + c + "\n" +
-                "Возрастающая последовательность: " + 0 + ", " + 0 + ", " + 0;
+                "Возрастающая последовательность: " + x + ", " + y + ", " + z;
     }
 }
