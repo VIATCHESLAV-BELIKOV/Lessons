@@ -5,10 +5,10 @@ public class Shapes {
         double totalArea = totalArea(
                 new Rectangle(10, 15),
                 new Rectangle(4, 8),
-                new Square(23));
-                new Triangle(5,10,13);
-                new Oval(5,4);
-                new Circle(10);
+                new Square(23),
+                new Triangle(5,10,13),
+                new Oval(5,4),
+                new Circle(10));
 
          System.out.println(totalArea);
     }
