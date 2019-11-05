@@ -13,7 +13,7 @@ public class Triangle extends Shape {
     }
 
     @Override
-    public double area(){
+    public double area() {
         double pp = (a + b + c)/2;
         double result = Math.sqrt(pp*(pp-a)*(pp-b)*(pp-c));
         System.out.printf("rectangle(square) area a=%.0f, b=%.0f, c=%.0f is %.4f\n", a, b, c, result);
