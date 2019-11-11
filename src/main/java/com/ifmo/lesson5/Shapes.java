@@ -1,6 +1,6 @@
 package com.ifmo.lesson5;
 
-import com.ifmo.lesson4.LinkedList;
+import com.ifmo.lesson5.LinkedList;
 
 public class Shapes {
     public static void main(String[] args) {
