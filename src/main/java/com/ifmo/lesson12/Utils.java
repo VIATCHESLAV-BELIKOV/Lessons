@@ -83,15 +83,14 @@ public class Utils {
         System.out.println("==== 1.b. ====");
         filter( sStrings, s -> s.length() > 3 ).forEach(System.out::println);
         System.out.println("==== 2.a. ====");
-        transform( iIntegers, integer -> integer.toString()).forEach(System.out::println);
+        transform( iIntegers, Object::toString).forEach(System.out::println);
         System.out.println("==== 2.b. ====");
         transform( sIntegers, Integer::valueOf ).forEach(System.out::println);
         System.out.println("==== 2.c. ====");
         transform( iIntegers, i -> i * i ).forEach(System.out::println);
-
+        System.out.println("==== 3.   ====");
         Predicate<Integer> preI =  i -> i % 2 == 0;
-        Transformer<Integer, String> preS = i -> i.toString();
-
+        Transformer<Integer, String> preS = Object::toString;
         view(  preI, preS, iIntegers, iInteger1, iInteger2 ).forEach(System.out::println);
 
     } // end main
