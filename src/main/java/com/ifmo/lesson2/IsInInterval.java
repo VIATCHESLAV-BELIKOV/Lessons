@@ -1,5 +1,7 @@
 package com.ifmo.lesson2;
 
+import java.util.Random;
+
 public class IsInInterval {
     /*
      Создать программу, которая будет проверять попало ли случайно выбранное из отрезка
@@ -14,18 +16,20 @@ public class IsInInterval {
         String inInterval = isInInterval(rnd);
 
         // TODO implement
+
+        System.out.printf("число %d %s содержится в интервале", rnd, inInterval);
+
     }
 
     public static int randomInt() {
         // TODO implement
-
-        return 0;
+        Random r = new Random();
+        return r.nextInt(150) + 5;
     }
 
     public static String isInInterval(int rnd) {
         // TODO implement
-
-        return "";
+        return (( ( rnd < 26 ) || ( rnd > 99 ) ) ? "не" : "");
     }
 
 }
