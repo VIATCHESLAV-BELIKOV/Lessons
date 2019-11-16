@@ -21,7 +21,10 @@ public class Factorial {
         // TODO implement
 
         int i = 1;
-        for ( int k=1; k<=n; k++) i *= k;
+        for ( int k=1; k<n; k++) {
+             i *= k;
+            System.out.printf( "%d - %d\n", k, i);
+        }
         return i;
     }
 }
