@@ -22,7 +22,7 @@ public class Count2 {
             sStr = String.format("%05d", i);
             for (int j = 0; j < 5; j++ ){
                 if (sStr.charAt(j) == '2'){
-                    System.out.println(sStr);
+        //            System.out.println(sStr);
                     l++;
                     break;
                 }
