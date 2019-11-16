@@ -17,7 +17,7 @@ public class IsInInterval {
 
         // TODO implement
 
-        System.out.printf("число %d %s содержится в интервале", rnd, inInterval);
+        System.out.printf("число %d %s в интервале (25,100)\n", rnd, inInterval);
 
     }
 
@@ -29,7 +29,7 @@ public class IsInInterval {
 
     public static String isInInterval(int rnd) {
         // TODO implement
-        return ( ( ( rnd > 25 ) && ( rnd < 100 ) ) ? "" :  "не" );
+        return ( ( ( rnd > 25 ) && ( rnd < 100 ) ) ? "содержится" :  "не содержится" );
     }
 
 }
