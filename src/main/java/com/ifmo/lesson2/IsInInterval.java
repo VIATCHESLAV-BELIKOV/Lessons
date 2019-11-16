@@ -29,7 +29,7 @@ public class IsInInterval {
 
     public static String isInInterval(int rnd) {
         // TODO implement
-        return (( ( rnd < 26 ) || ( rnd > 99 ) ) ? "не" : "");
+        return ( ( ( rnd > 25 ) && ( rnd < 100 ) ) ? "" :  "не" );
     }
 
 }
