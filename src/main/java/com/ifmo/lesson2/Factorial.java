@@ -20,11 +20,9 @@ public class Factorial {
     public static long factorial(int n) {
         // TODO implement
 
-        int i = 1;
-        for ( int k=1; k<n; k++) {
-             i *= k;
-            System.out.printf( "%d - %d\n", k, i);
-        }
-        return i;
+        long l = 1;
+        for ( int k=1; k <= n; k++) l *= k;
+
+        return l;
     }
 }
