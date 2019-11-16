@@ -8,7 +8,7 @@ public class Progression {
     public static void main(String[] args) {
         // TODO implement
         for ( int i = 1000; i < 10000; i += 3 )
-            System.out.printf("%d\t", i);
+            System.out.printf("%d", i);
 
     }
 }
