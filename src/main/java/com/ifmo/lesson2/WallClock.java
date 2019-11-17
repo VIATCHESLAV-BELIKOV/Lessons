@@ -45,8 +45,9 @@ public class WallClock {
         return r.nextInt(28800);
     }
 
-    public static String remainingHours(int rndSecond) {
+    public static String remainingHours(int rndSecond1) {
         // TODO implement
+        Integer rndSecond = 28800;
         Integer iH = Math.floorDiv(rndSecond,3600); //Hours
         return String.format("%d\nОстал%s %s час%s", rndSecond, ((iH == 1) ? "ся" : "ось"), ((iH > 0) ? iH.toString() : "менее"), ((iH > 4) ? "ов" : ((iH == 1) ? "" : "а")));
     }
