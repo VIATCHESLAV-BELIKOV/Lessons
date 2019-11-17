@@ -29,7 +29,7 @@ public class IsInInterval {
 
     public static String isInInterval(int rnd) {
         // TODO implement
-        return String.format( "Число %d %s содержится в интервале (25,100)", rnd,  ( (rnd > 25) && (rnd < 100) )  ? "" :  "не" );
+        return String.format( "Число %d %sсодержится в интервале (25,100)", rnd,  ( (rnd > 25) && (rnd < 100) )  ? "" :  "не " );
     }
 
 }
