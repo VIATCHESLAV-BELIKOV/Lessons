@@ -35,7 +35,7 @@ public class WallClock {
         int randomSecond = randomSecond();
 
         String remainingHours = remainingHours(randomSecond);
-
+      //  System.out.println(randomSecond);
         System.out.println(remainingHours);
     }
 
@@ -45,10 +45,9 @@ public class WallClock {
         return r.nextInt(28800);
     }
 
-    public static String remainingHours(int rndSecond1) {
+    public static String remainingHours(int rndSecond) {
         // TODO implement
-        Integer rndSecond = 28800;
         Integer iH = Math.floorDiv(rndSecond,3600); //Hours
-        return String.format("%d\nОстал%s %s час%s", rndSecond, ((iH == 1) ? "ся" : "ось"), ((iH > 0) ? iH.toString() : "менее"), ((iH > 4) ? "ов" : ((iH == 1) ? "" : "а")));
+        return String.format("%d Остал%s %s час%s", rndSecond, ((iH == 1) ? "ся" : "ось"), ((iH > 0) ? iH.toString() : "менее"), ((iH > 4) ? "ов" : ((iH == 1) ? "" : "а")));
     }
 }
