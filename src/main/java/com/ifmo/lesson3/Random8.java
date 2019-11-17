@@ -33,7 +33,7 @@ public class Random8 {
     public static int[] replaceWithZeros(int[] randomNumbers) {
         // TODO implement
         int[] iArray = new int[randomNumbers.length];
-        for (int i = 0; i < iArray.length; i ++) iArray[i] = ( (i + 1) % 2 == 0 ) ?  randomNumbers[i] : 0;
+        for (int i = 0; i < iArray.length; i ++) iArray[i] = ( i % 2 == 0 ) ?  randomNumbers[i] : 0;
         return iArray;
     }
 }
