@@ -24,7 +24,7 @@ public class Random8 {
 
     public static int[] randomNumbers() {
         // TODO implement
-        int[] iArray = new int[8];
+        int[] iArray = new int[10];
         Random r = new Random();
         for (int i = 0; i < iArray.length; i ++) iArray[i] = r.nextInt(9) + 1;
         return iArray;
