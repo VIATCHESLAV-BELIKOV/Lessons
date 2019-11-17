@@ -48,6 +48,6 @@ public class WallClock {
     public static String remainingHours(int rndSecond) {
         // TODO implement
         Integer iH = Math.floorDiv(rndSecond,3600); //Hours
-        return String.format("%d Остал%s %s час%s", rndSecond, ((iH == 1) ? "ся" : "ось"), ((iH > 0) ? iH.toString() : "менее"), ((iH > 4) ? "ов" : ((iH == 1) ? "" : "а")));
+        return String.format("Остал%s %s час%s", ((iH == 1) ? "ся" : "ось"), ((iH > 0) ? iH.toString() : "менее"), ((iH > 4) ? "ов" : ((iH == 1) ? "" : "а")));
     }
 }
