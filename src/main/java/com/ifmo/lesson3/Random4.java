@@ -13,8 +13,7 @@ public class Random4 {
 
         // TODO implement
         for (int i = 0; i < randomNumbers.length; i ++) System.out.printf("%d ", randomNumbers[i]);
-        System.out.println("");
-        
+        System.out.println(isIncreasingSequence(randomNumbers));
     }
 
     public static int[] randomNumbers() {
@@ -27,7 +26,12 @@ public class Random4 {
 
     public static boolean isIncreasingSequence(int[] randomNumbers) {
         // TODO implement
-
-        return false;
+        boolean bRet = true;
+        for (int i = 1; i < randomNumbers.length; i ++)
+            if ( randomNumbers[i] < randomNumbers[i-1]) {
+                bRet = false;
+                break;
+            }
+        return bRet;
     }
 }
