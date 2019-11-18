@@ -45,7 +45,10 @@ public class Random12 {
         // TODO implement
         int maxI = -1;
         for (int i = 0; i < randomNumbers.length; i ++) {
-            if ( randomNumbers[i] >= maxI ) maxI = i;
+            if ( randomNumbers[i] >= maxI ) {
+                maxI = i;
+                break;
+            }
         }
         return maxI;
     }
