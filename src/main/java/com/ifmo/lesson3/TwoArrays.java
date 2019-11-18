@@ -40,7 +40,7 @@ public class TwoArrays {
     public static int average(int[] randomNumbers) {
         // TODO implement
         int iSum = 0;
-        for (int i = 0; i < randomNumbers.length; i ++) isum += randomNumbers[i];
+        for (int i = 0; i < randomNumbers.length; i ++) iSum += randomNumbers[i];
         return iSum/5;
     }
 }

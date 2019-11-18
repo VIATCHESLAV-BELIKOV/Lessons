@@ -12,8 +12,8 @@ public class Random12 {
         int[] randomNumbers = randomNumbers();
 
         // TODO implement
-        for (int i = 0; i < randomNumbers.length; i ++)
-            System.out.printf( "%d ", randomNumbers[i] );
+    //    for (int i = 0; i < randomNumbers.length; i ++)
+    //        System.out.printf( "%d ", randomNumbers[i] );
     //    System.out.printf("\nsize=%d\n", randomNumbers.length );
 
         int max = max(randomNumbers);
@@ -28,7 +28,7 @@ public class Random12 {
         // TODO implement
         int[] iArray = new int[12];
         Random r = new Random();
-        for (int i = 0; i < iArray.length; i ++) iArray[i] = r.nextInt(25) - 15;
+        for (int i = 0; i < iArray.length; i ++) iArray[i] = r.nextInt(30) - 15;
         return iArray;
     }
 
@@ -47,7 +47,6 @@ public class Random12 {
         for (int i = 0; i < randomNumbers.length; i ++) {
             if ( randomNumbers[i] >= maxI ) {
                 maxI = i;
-                break;
             }
         }
         return maxI;
