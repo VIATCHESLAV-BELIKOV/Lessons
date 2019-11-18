@@ -14,7 +14,7 @@ public class Fibonacci20 {
         // TODO implement
 
         System.out.println(Arrays.toString(fibonacciNumbers));
-        
+
     }
 
     public static int[] fibonacciNumbers() {
