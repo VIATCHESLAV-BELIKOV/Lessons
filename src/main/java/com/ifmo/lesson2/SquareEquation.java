@@ -33,7 +33,7 @@ public class SquareEquation {
         else {
             dRoots = new double[2];
             dRoots[0] = (-b + Math.sqrt(d))/(2*a);
-            dRoots[0] = (-b - Math.sqrt(d))/(2*a);
+            dRoots[1] = (-b - Math.sqrt(d))/(2*a);
         }
 
         return dRoots;
