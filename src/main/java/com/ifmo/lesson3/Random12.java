@@ -12,11 +12,10 @@ public class Random12 {
         int[] randomNumbers = randomNumbers();
 
         // TODO implement
-    //    for (int i = 0; i < randomNumbers.length; i ++)
-    //        System.out.printf( "%d ", randomNumbers[i] );
-    //    System.out.printf("\nsize=%d\n", randomNumbers.length );
+//        System.out.println(Arrays.toString(randomNumbers));
 
         int max = max(randomNumbers);
+//        System.out.println(max);
         int maxLastIndex = lastIndexOf(randomNumbers, max);
 
         // TODO implement
@@ -35,7 +34,7 @@ public class Random12 {
     public static int max(int[] randomNumbers) {
         // TODO implement
         int maxN = -15;
-        for (int i = 0; i < randomNumbers.length; i ++) {
+        for (int i = 0; i < randomNumbers.length; i++) {
             if ( randomNumbers[i] > maxN ) maxN = randomNumbers[i];
         }
         return maxN;
@@ -44,11 +43,8 @@ public class Random12 {
     public static int lastIndexOf(int[] randomNumbers, int max) {
         // TODO implement
         int maxI = -1;
-        for (int i = 0; i < randomNumbers.length; i ++) {
-            if ( randomNumbers[i] >= maxI ) {
-                maxI = i;
-            }
-        }
+        for (int i = 0; i < randomNumbers.length; i ++)
+            if ( randomNumbers[i] == max ) maxI = i;
         return maxI;
     }
 }
