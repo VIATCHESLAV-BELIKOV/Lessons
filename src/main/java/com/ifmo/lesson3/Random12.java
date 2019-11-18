@@ -34,7 +34,7 @@ public class Random12 {
 
     public static int max(int[] randomNumbers) {
         // TODO implement
-        int maxN = randomNumbers[0];
+        int maxN = -15;
         for (int i = 0; i < randomNumbers.length; i ++) {
             if ( randomNumbers[i] > maxN ) maxN = randomNumbers[i];
         }
