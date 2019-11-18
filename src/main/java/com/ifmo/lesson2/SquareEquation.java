@@ -23,7 +23,19 @@ public class SquareEquation {
      */
     public static double[] squareEquationRoots(double a, double b, double c) {
         // TODO implement
+        double d=b*b-4*a*c;
+        double[] dRoots;
+        if ( d < 0 ) return null;
+        if ( d == 0 ){
+            dRoots = new double[1];
+            dRoots[0] = -b/(2*a);
+        }
+        else {
+            dRoots = new double[2];
+            dRoots[0] = (-b + Math.sqrt(d))/(2*a);
+            dRoots[0] = (-b - Math.sqrt(d))/(2*a);
+        }
 
-        return null;
+        return dRoots;
     }
 }
