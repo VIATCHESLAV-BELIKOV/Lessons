@@ -17,8 +17,8 @@ public class DivisionRemainder {
     public static void calculate(int q, int w) {
         // TODO implement
 
-        int i = 21 / 8;
-        int r = 21 % 8;
+        int i = q / w;
+        int r = q % w;
 
         System.out.printf("%s / %s = %s и %s в остатке\n", q, w, i, r);
     }
