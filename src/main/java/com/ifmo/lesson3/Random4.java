@@ -1,5 +1,6 @@
 package com.ifmo.lesson3;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Random4 {
@@ -12,7 +13,8 @@ public class Random4 {
         int[] randomNumbers = randomNumbers();
 
         // TODO implement
-        for (int i = 0; i < randomNumbers.length; i ++) System.out.printf("%d ", randomNumbers[i]);
+        System.out.println(Arrays.toString(randomNumbers));
+ //       for (int i = 0; i < randomNumbers.length; i ++) System.out.printf("%d ", randomNumbers[i]);
         System.out.println(isIncreasingSequence(randomNumbers));
     }
 
