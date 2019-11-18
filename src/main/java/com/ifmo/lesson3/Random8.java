@@ -1,5 +1,6 @@
 package com.ifmo.lesson3;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Random8 {
@@ -12,14 +13,13 @@ public class Random8 {
         int[] randomNumbers = randomNumbers();
 
         // TODO implement
-        for (int i = 0; i < randomNumbers.length; i ++) System.out.printf("%d ", randomNumbers[i]);
-        System.out.println("");
+        System.out.println(Arrays.toString(randomNumbers));
 
         int[] replacedWithZeros = replaceWithZeros(randomNumbers);
 
         // TODO implement
-        for (int i = 0; i < replacedWithZeros.length; i ++) System.out.printf("%d ", replacedWithZeros[i]);
-
+        System.out.println(Arrays.toString(replacedWithZeros));
+ 
     }
 
     public static int[] randomNumbers() {
