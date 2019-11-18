@@ -26,6 +26,7 @@ public class TwoArrays {
 
         // TODO implement
 
+        System.out.printf( "average1 %s average2\n", (( average1 > average2 ) ? "больше" : (( average1 < average2 ) ? "меньше" : "равен" )));
 
     }
 
