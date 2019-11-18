@@ -12,8 +12,8 @@ public class Random12 {
         int[] randomNumbers = randomNumbers();
 
         // TODO implement
-    //    for (int i = 0; i < randomNumbers.length; i ++)
-    //        System.out.printf( "%d ", randomNumbers[i] );
+        for (int i = 0; i < randomNumbers.length; i ++)
+            System.out.printf( "%d ", randomNumbers[i] );
     //    System.out.printf("\nsize=%d\n", randomNumbers.length );
 
         int max = max(randomNumbers);

@@ -1,5 +1,7 @@
 package com.ifmo.lesson3;
 
+import java.util.Random;
+
 public class TwoArrays {
     /*
      Создайте 2 массива из 5 случайных целых чисел из отрезка [0;5] каждый, выведите
@@ -12,22 +14,33 @@ public class TwoArrays {
         int[] randomNumbers2 = randomNumbers();
 
         // TODO implement
+        for (int i = 0; i < randomNumbers1.length; i ++)
+            System.out.printf( "%d ", randomNumbers1[i] );
+        System.out.println("");
+        for (int i = 0; i < randomNumbers2.length; i ++)
+            System.out.printf( "%d ", randomNumbers2[i] );
+        System.out.println("");
 
         int average1 = average(randomNumbers1);
         int average2 = average(randomNumbers2);
 
         // TODO implement
+
+
     }
 
     public static int[] randomNumbers() {
         // TODO implement
-
-        return new int[0];
+        int[] iArray = new int[5];
+        Random r = new Random();
+        for (int i = 0; i < iArray.length; i ++) iArray[i] = r.nextInt(5);
+        return iArray;
     }
 
     public static int average(int[] randomNumbers) {
         // TODO implement
-
-        return 0;
+        int iSum = 0;
+        for (int i = 0; i < randomNumbers.length; i ++) isum += randomNumbers[i];
+        return iSum/5;
     }
 }
