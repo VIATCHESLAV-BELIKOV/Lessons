@@ -19,7 +19,7 @@ public class Random8 {
 
         // TODO implement
         System.out.println(Arrays.toString(replacedWithZeros));
- 
+
     }
 
     public static int[] randomNumbers() {
