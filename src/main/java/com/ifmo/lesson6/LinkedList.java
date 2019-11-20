@@ -17,11 +17,11 @@ public class LinkedList implements List, Stack, Queue {
         // TODO implement.
         Item iIter = head;
         if (head == null) {
-            head = new Item;
+            head = new Item(val);
             iIter = head;
         } else {
             while (iIter.next != null) iIter = iIter.next;
-            iIter.next = new Item;
+            iIter.next = new Item(val);
             iIter = iIter.next;
         }
         iIter.value = val;
