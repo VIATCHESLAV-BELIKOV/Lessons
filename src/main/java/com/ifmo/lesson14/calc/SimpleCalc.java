@@ -1,5 +1,7 @@
 package com.ifmo.lesson14.calc;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /*
@@ -19,8 +21,14 @@ import java.util.Scanner;
  * если имя переменной не найдено или использовался неверный синтаксис.
  */
 public class SimpleCalc {
+
+    static Map<String, Integer> mVars = new HashMap<String, Integer>();
+
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
+
+        mVars.clear();
 
         while (true) {
             System.out.println("Enter expression: ");
@@ -41,21 +49,37 @@ public class SimpleCalc {
         }
     }
 
-    static int calculate(String line) throws CalcException {
-        if (!line.contains("+") && !line.contains("-"))
-            throw new CalcException("Expression must contain '+' or '-': " + line);
+    static String calculate(String line) throws CalcException {
+
+        if (!line.contains("+") && !line.contains("-") && !line.contains("="))
+            throw new CalcException("Expression must contain '+', '-' or '=' : " + line);
 
         String[] operands = line.split(" ");
 
         if (operands.length != 3)
-            throw new CalcException("Expression must have only 3 operands separated with space (e.g. 2 + 4): " + line);
+            throw new CalcException("Expression must have only 3 operands separated with space (e.g. 2 + 4, v1 + v2, v9 + 5 or v8 = 3): " + line);
 
         OPERATOR operator = OPERATOR.parse(operands[1]);
 
-        int op1 = parseOperand(operands[0]);
-        int op2 = parseOperand(operands[2]);
+        if ( !(operandIsVar(operands[0]) || operandIsNumber(operands[0])) && !(operandIsVar(operands[2]) || operandIsNumber(operands[2])) )
+            throw new CalcException("Wrong operand, must be integer numbers or variables : " + operands[0] + "," + operands[2]);
 
-        return operator.apply(op1, op2);
+        return operator.applyA(operands[0], operands[2]);
+    }
+
+    private static boolean operandIsVar(String string) throws CalcException {
+        return string.matches("^[a-zA-Z]+\\w*$") ;
+    }
+
+    private static boolean operandIsNumber(String string) throws CalcException {
+        int i;
+        try {
+            i =  Integer.parseInt(string);
+            return true;
+        }
+        catch (NumberFormatException e) {
+        }
+        return false;
     }
 
     private static int parseOperand(String string) throws CalcException {
@@ -68,16 +92,42 @@ public class SimpleCalc {
     }
 
     private enum OPERATOR {
-        PLUS, MINUS;
 
-        int apply(int arg1, int arg2) throws CalcException {
+        PLUS, MINUS, ISEQ;
+
+        String applyA( String argA, String argB ) throws CalcException {
+
+            Integer arg1, arg2;
+
             switch (this) {
 
                 case PLUS:
-                    return arg1 + arg2;
-
                 case MINUS:
-                    return arg1 - arg2;
+                    if (operandIsVar(argA)){
+                        arg1 = mVars.get(argA);
+                        if ( arg1 == null )
+                            throw new CalcException("variable " + argA + " is not found");
+                    }
+                    else
+                        arg1 = parseOperand(argA);
+                    if (operandIsVar(argB)){
+                        arg2 = mVars.get(argB);
+                        if ( arg2 == null )
+                            throw new CalcException("variable " + argB + " is not found");
+                    }
+                    else
+                        arg2 = parseOperand(argB);
+                    if (this == PLUS)
+                        arg1 += arg2;
+                    else
+                        arg1 -= arg2;
+                    return String.valueOf(arg1);
+                case ISEQ:
+                    if ( !operandIsVar(argA) )
+                        throw new CalcException("variable must contain letters and digits only and first symbol is letter");
+                    arg2 = parseOperand(argB);
+                    mVars.put(argA, arg2);
+                    return argA + " saved";
             }
 
             throw new CalcException("Unsupported operator: " + this);
@@ -90,6 +140,10 @@ public class SimpleCalc {
 
                 case "-":
                     return MINUS;
+
+                 case "=":
+                     return ISEQ;
+
             }
 
             throw new CalcException("Incorrect operator: " + str);
