@@ -43,13 +43,12 @@ public class SimpleCalc {
             }
             catch (CalcException e) {
                 System.err.println("Error occurred: ");
-
                 e.printStackTrace();
             }
         }
     }
 
-    static String calculate(String line) throws CalcException {
+    static Integer calculate(String line) throws CalcException {
 
         if (!line.contains("+") && !line.contains("-") && !line.contains("="))
             throw new CalcException("Expression must contain '+', '-' or '=' : " + line);
@@ -64,7 +63,7 @@ public class SimpleCalc {
         if ( !(operandIsVar(operands[0]) || operandIsNumber(operands[0])) && !(operandIsVar(operands[2]) || operandIsNumber(operands[2])) )
             throw new CalcException("Wrong operand, must be integer numbers or variables : " + operands[0] + "," + operands[2]);
 
-        return operator.applyA(operands[0], operands[2]);
+        return operator.apply(operands[0], operands[2]);
     }
 
     private static boolean operandIsVar(String string) throws CalcException {
@@ -95,7 +94,8 @@ public class SimpleCalc {
 
         PLUS, MINUS, ISEQ;
 
-        String applyA( String argA, String argB ) throws CalcException {
+
+        Integer apply( String argA, String argB ) throws CalcException {
 
             Integer arg1, arg2;
 
@@ -121,13 +121,13 @@ public class SimpleCalc {
                         arg1 += arg2;
                     else
                         arg1 -= arg2;
-                    return String.valueOf(arg1);
+                    return arg1;
                 case ISEQ:
                     if ( !operandIsVar(argA) )
                         throw new CalcException("variable must contain letters and digits only and first symbol is letter");
                     arg2 = parseOperand(argB);
                     mVars.put(argA, arg2);
-                    return argA + " saved";
+                    return arg2;
             }
 
             throw new CalcException("Unsupported operator: " + this);

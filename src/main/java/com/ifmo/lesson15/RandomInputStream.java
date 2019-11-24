@@ -11,15 +11,18 @@ import java.util.Random;
 public class RandomInputStream extends InputStream {
     private final Random random;
     private final long length;
+    private long lCurPos;
 
     public RandomInputStream(Random random, long length) {
         this.random = random;
         this.length = length;
+        lCurPos = 0;
     }
 
     @Override
     public int read() throws IOException {
         // TODO implement
-        return 0;
+        lCurPos++;
+        return (lCurPos < length) ? random.nextInt(255) : -1;
     }
 }

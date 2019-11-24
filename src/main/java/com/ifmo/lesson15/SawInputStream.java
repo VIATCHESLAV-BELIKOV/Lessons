@@ -13,15 +13,22 @@ import java.io.InputStream;
 public class SawInputStream extends InputStream {
     private final int amplitude;
     private final long length;
+    private byte btOutput;
+    private long lCurPos;
 
     public SawInputStream(int amplitude, long length) {
         this.amplitude = amplitude;
         this.length = length;
+        btOutput = 1;
+        lCurPos = 0;
     }
 
     @Override
     public int read() throws IOException {
         // TODO implement
-        return 0;
+        lCurPos++;
+        btOutput = (btOutput <= amplitude) ? btOutput : 1;
+        btOutput--;
+        return (lCurPos <  length ) ? btOutput : -1;
     }
 }
