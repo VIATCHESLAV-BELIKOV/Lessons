@@ -19,7 +19,7 @@ public class SawInputStream extends InputStream {
     public SawInputStream(int amplitude, long length) {
         this.amplitude = amplitude;
         this.length = length;
-        btOutput = 1;
+        btOutput = -1;
         lCurPos = 0;
     }
 
@@ -27,8 +27,8 @@ public class SawInputStream extends InputStream {
     public int read() throws IOException {
         // TODO implement
         lCurPos++;
-        btOutput = (btOutput <= amplitude) ? btOutput : 1;
-        btOutput--;
+        btOutput++;
+        btOutput = (btOutput < amplitude) ? btOutput : 0;
         return (lCurPos <  length ) ? btOutput : -1;
     }
 }

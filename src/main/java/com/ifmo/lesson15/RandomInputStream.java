@@ -23,6 +23,6 @@ public class RandomInputStream extends InputStream {
     public int read() throws IOException {
         // TODO implement
         lCurPos++;
-        return (lCurPos < length) ? random.nextInt(255) : -1;
+        return (lCurPos < length) ? random.nextInt(256) : -1;
     }
 }
