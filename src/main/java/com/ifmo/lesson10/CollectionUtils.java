@@ -31,7 +31,6 @@ public class CollectionUtils {
                                 return false;
                             }
                         }
-
                         return current.hasNext();
                     }
 
@@ -62,9 +61,11 @@ public class CollectionUtils {
 
         Iterator<String> iterator = view.iterator();
 
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-        }
+ //       while (iterator.hasNext()) {
+ //           System.out.println(iterator.next());
+ //       }
+
+ //       System.out.println("====");
 
         for (String s : view) {
             System.out.println(s); // 1, 2, 3, 4, 5, 6, 7

@@ -13,7 +13,7 @@ import java.util.function.Consumer;
 public class TopWords {
     public static void main(String[] args) throws IOException {
         // Создаем файл, указывая путь к текстовому файлу на диске
-        File text = new File("C:\\Java\\Lessons\\src\\main\\resources\\wap.txt");
+        File text = new File("C:\\Java\\resources\\wap.txt");
 
         // Вычитываем все строки из файла
         List<String> lines = Files.readAllLines(text.toPath());
