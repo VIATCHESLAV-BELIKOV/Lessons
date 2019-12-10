@@ -16,7 +16,18 @@ public class Count2 {
 
     public static int count2() {
         // TODO implement
-
-        return 0;
+        String sStr;
+        int l = 0;
+        for ( int i = 1; i < 50001; i++ ) {
+            sStr = String.format("%05d", i);
+            for (int j = 0; j < 5; j++ ){
+                if (sStr.charAt(j) == '2'){
+        //            System.out.println(sStr);
+                    l++;
+                    break;
+                }
+            }
+        }
+        return l;
     }
 }

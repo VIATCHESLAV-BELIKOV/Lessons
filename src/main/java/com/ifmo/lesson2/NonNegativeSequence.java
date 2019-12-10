@@ -7,5 +7,6 @@ public class NonNegativeSequence {
      */
     public static void main(String[] args) {
         // TODO implement
+        for ( int j = 90; j >= 0; j -= 5 ) System.out.printf("%d ", j);
     }
 }

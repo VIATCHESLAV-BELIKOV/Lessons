@@ -13,5 +13,11 @@ public class Dividers {
         int n = scanner.nextInt();
 
         // TODO implement
+        String sOut = "";
+        for ( int j = 1; j <= n; j++ )
+          if ( n % j == 0) {
+              sOut += (Integer.toString(j) + " ");
+          }
+        System.out.println(sOut);
     }
 }

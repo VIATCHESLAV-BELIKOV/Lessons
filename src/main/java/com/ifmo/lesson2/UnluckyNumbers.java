@@ -16,6 +16,14 @@ public class UnluckyNumbers {
     public static int unluckyNumbersCount() {
         // TODO implement
 
-        return 0;
+        String sStr;
+        int l = 0;
+        for ( int i = 1; i < 100000; i++ ){
+            sStr = String.format("%05d", i);
+//            System.out.println(sStr);
+            if ( sStr.contains("13") || sStr.contains("4") ) l +=1;
+        }
+
+        return l;
     }
 }
